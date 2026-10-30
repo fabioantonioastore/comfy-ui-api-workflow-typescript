@@ -1,3 +1,9 @@
+# Custom
+.claude
+.env
+runpod_outputs
+scripts
+
 # Logs
 logs
 *.log

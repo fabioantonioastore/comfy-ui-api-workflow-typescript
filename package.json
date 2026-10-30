@@ -1,0 +1,71 @@
+{
+  "name": "comfy-ui-api-workflow",
+  "version": "0.0.9",
+  "description": "Build ComfyUI workflows in the API format from typed node classes.",
+  "keywords": [
+    "comfyui",
+    "workflow",
+    "api",
+    "stable-diffusion"
+  ],
+  "license": "MIT",
+  "author": "Fabio Antonio Astore",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabioantonioastore/comfy-ui-api-workflow-typescript.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./nodes": {
+      "types": "./dist/nodes.d.ts",
+      "default": "./dist/nodes.js"
+    },
+    "./nodes/*": {
+      "types": "./dist/nodes/*.d.ts",
+      "default": "./dist/nodes/*.js"
+    },
+    "./errors": {
+      "types": "./dist/errors.d.ts",
+      "default": "./dist/errors.js"
+    },
+    "./errors/*": {
+      "types": "./dist/errors/*.d.ts",
+      "default": "./dist/errors/*.js"
+    },
+    "./exceptions": {
+      "types": "./dist/exceptions.d.ts",
+      "default": "./dist/exceptions.js"
+    },
+    "./enums": {
+      "types": "./dist/enums.d.ts",
+      "default": "./dist/enums.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "generate": "tsx scripts/generate-nodes.ts",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@vitest/coverage-v8": "^5.0.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
+  }
+}
